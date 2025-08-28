@@ -72,9 +72,10 @@ body.magic-active .signature-btn:hover {
     background: none;
     border: none;
     font-size: 1.5rem;
-    color: var(--text-color);
+    color: var(--accent-color);
     cursor: pointer;
     z-index: 1001;
+    transition: color 0.3s;
 }
 .nav-links-container {
     display: flex;
@@ -444,9 +445,13 @@ body.magic-active .signature-btn:hover {
 /* --- Media Queries for Responsiveness --- */
 @media (max-width: 768px) {
     .navbar {
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
         padding: 1rem;
+    }
+    .menu-toggle {
+        display: block;
+        z-index: 1001;
     }
     .nav-links-container {
         display: none;
@@ -454,21 +459,25 @@ body.magic-active .signature-btn:hover {
         width: 100%;
         text-align: center;
         background-color: var(--primary-color);
-        position: absolute;
-        top: 60px;
+        position: fixed;
+        top: 0;
         left: 0;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        height: 100vh;
+        padding-top: 5rem;
+        transition: transform 0.3s ease-in-out;
+        transform: translateY(-100%);
     }
     .nav-links-container.active {
         display: flex;
+        transform: translateY(0);
     }
     .nav-btn {
         width: 100%;
         padding: 1rem 0;
         border-bottom: 1px solid var(--secondary-color);
     }
-    .menu-toggle {
-        display: block;
+    .hero-section {
+        padding-top: 100px;
     }
     .hero-content h1 {
         font-size: 2rem;
