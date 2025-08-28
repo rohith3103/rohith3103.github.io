@@ -1,9 +1,9 @@
 :root {
-    --primary-color: #000000; /* Black */
-    --secondary-color: #1a1a1a; /* Dark gray for subtle contrast */
-    --accent-color: #FFA500; /* Orange for highlights */
-    --text-color: #ADD8E6; /* Light blue for main text */
-    --card-bg: #111111; /* Even darker cards on hover */
+    --primary-color: #000000;
+    --secondary-color: #1a1a1a;
+    --accent-color: #FFA500;
+    --text-color: #ADD8E6;
+    --card-bg: #111111;
     
     /* Magic Theme Colors */
     --magic-primary: #ADD8E6;
@@ -227,6 +227,7 @@ h1, h2, h3 {
 .skill-category p {
     color: var(--text-color);
 }
+
 
 /* --- Projects Section (Horizontal Scroll) --- */
 .projects-section {
