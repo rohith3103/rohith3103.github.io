@@ -76,7 +76,7 @@ body.magic-active .signature-btn:hover {
     cursor: pointer;
     z-index: 1001;
 }
-.nav-links-centered {
+.nav-links-container {
     display: flex;
     justify-content: center;
     flex-grow: 1;
@@ -448,14 +448,27 @@ body.magic-active .signature-btn:hover {
         align-items: center;
         padding: 1rem;
     }
-    .nav-links-centered {
-        margin-top: 1rem;
+    .nav-links-container {
+        display: none;
         flex-direction: column;
-        align-items: center;
+        width: 100%;
+        text-align: center;
+        background-color: var(--primary-color);
+        position: absolute;
+        top: 60px;
+        left: 0;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+    .nav-links-container.active {
+        display: flex;
     }
     .nav-btn {
         width: 100%;
-        text-align: center;
+        padding: 1rem 0;
+        border-bottom: 1px solid var(--secondary-color);
+    }
+    .menu-toggle {
+        display: block;
     }
     .hero-content h1 {
         font-size: 2rem;
