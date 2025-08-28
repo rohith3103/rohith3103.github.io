@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rohith Reddy Bethi - Portfolio</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Lora:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <button class="signature-btn" id="signature-button">RR</button>
+        <div class="nav-links-centered">
+            <a href="#about" class="nav-btn">About</a>
+            <a href="#skills" class="nav-btn">Skills</a>
+            <a href="#projects" class="nav-btn">Projects</a>
+            <a href="#experience" class="nav-btn">Experience</a>
+            <a href="#education" class="nav-btn">Education</a>
+            <a href="#certifications" class="nav-btn">Certifications</a>
+            <a href="#contact" class="nav-btn">Contact</a>
+            <a href="game.html" class="nav-btn" id="game-button">Play Game</a>
+        </div>
+    </nav>
+
+    <div id="main-content">
+        <header class="hero-section">
+            <div id="particles-js"></div>
+            <div class="hero-content">
+                <h1 class="animated-name">ROHITH REDDY BETHI</h1>
+                <p class="tagline">Software Engineer & Data Scientist</p>
+                <p class="description">I build resilient backend systems and AI-powered solutions that scale with precision and passion.</p>
+                <a href="#contact" class="btn">Get in Touch</a>
+            </div>
+        </header>
+
+        <section id="about" class="about-section">
+            <div class="container">
+                <h2 class="animate-on-scroll">About My Work</h2>
+                <div class="about-content">
+                    <p class="animate-on-scroll">As a Computer Science & Data Science graduate, my expertise lies in functional programming, building robust backend systems, and AI-powered data science. I focus on designing systems that are not just functional but are also reliable, scalable, and self-healing. My ultimate goal is to craft resilient infrastructure that meets and exceeds industry standards, aiming for 99.999% availability. This commitment to reliability is the driving force behind every project I undertake.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="skills" class="skills-section">
+            <div class="container">
+                <h2 class="animate-on-scroll">Skills</h2>
+                <div class="skills-list">
+                    <div class="skill-category animate-on-scroll">
+                        <h3><i class="fas fa-code"></i> Programming Languages</h3>
+                        <p>C, Java, Python, R, SQL</p>
+                    </div>
+                    <div class="skill-category animate-on-scroll">
+                        <h3><i class="fas fa-terminal"></i> Backend & APIs</h3>
+                        <p>Flask, .NET Full Stack, REST APIs, Servlets</p>
+                    </div>
+                    <div class="skill-category animate-on-scroll">
+                        <h3><i class="fas fa-brain"></i> AI & Data Science</h3>
+                        <p>PyTorch, TensorFlow, NumPy, Pandas, Deep Learning</p>
+                    </div>
+                    <div class="skill-category animate-on-scroll">
+                        <h3><i class="fas fa-network-wired"></i> Infrastructure & Reliability</h3>
+                        <p>MongoDB, MySQL, Distributed Computing, Reliability Engineering</p>
+                    </div>
+                    <div class="skill-category animate-on-scroll">
+                        <h3><i class="fas fa-chart-bar"></i> Data Visualization</h3>
+                        <p>Matplotlib, Power BI, Seaborn, Tableau</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="projects-section">
+            <div class="container">
+                <h2 class="animate-on-scroll">My Projects</h2>
+                <div class="project-grid" id="projects-scroll-container">
+                    <div class="card-flip animate-on-scroll" onclick="this.classList.toggle('flipped')">
+                        <div class="card-front">
+                            <h3>DeepFake Detection System</h3>
+                            <p>08/2024 - 03/2025</p>
+                        </div>
+                        <div class="card-back">
+                            <p>Built scalable business logic with Flask APIs and PyTorch models to detect fake media across video, image, and audio. Implemented automatic anomaly detection with heatmap and spectrogram visualizations.</p>
+                            <a href="https://github.com/rohith3103/DeepFake.git" class="project-btn" target="_blank">View on GitHub</a>
+                        </div>
+                    </div>
+
+                    <div class="card-flip animate-on-scroll" onclick="this.classList.toggle('flipped')">
+                        <div class="card-front">
+                            <h3>Sign Language to Text System</h3>
+                            <p>03/2025 - Present</p>
+                        </div>
+                        <div class="card-back">
+                            <p>A Python-based AI system with a JavaScript frontend to translate sign language to text and voice using Vision Transformer and Transformer models. (In development)</p>
+                            <a href="#" class="project-btn unavailable" target="_blank">Repository Unavailable</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card-flip animate-on-scroll" onclick="this.classList.toggle('flipped')">
+                        <div class="card-front">
+                            <h3>AI-Powered Medical Imaging Analysis</h3>
+                            <p>04/2024 - 07/2024</p>
+                        </div>
+                        <div class="card-back">
+                            <p>Developed a CNN-based diagnostic model achieving 93.5% accuracy. Contributed to automated preprocessing pipelines, improving system reliability and scalability. (Link currently unavailable)</p>
+                            <a href="#" class="project-btn unavailable" target="_blank">Repository Unavailable</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="experience-section">
+            <div class="container">
+                <h2 class="animate-on-scroll">Work Experience</h2>
+                <div class="timeline">
+                    <div class="timeline-item animate-on-scroll">
+                        <h3>Data Science Intern - CODTECH IT Solutions</h3>
+                        <p class="timeline-date">05/2024 - 06/2024</p>
+                        <ul>
+                            <li>Built a predictive model that achieved 85% accuracy on telecom churn datasets.</li>
+                            <li>Conducted exploratory analysis and anomaly detection to derive actionable insights from large-scale data.</li>
+                            <li>Improved business intelligence pipelines for automated decision-making.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="education" class="education-section">
+            <div class="container">
+                <h2 class="animate-on-scroll">Education</h2>
+                <div class="timeline">
+                    <div class="timeline-item animate-on-scroll">
+                        <h3>Bachelor of Technology in Computer Science & Engineering (Data Science)</h3>
+                        <p class="timeline-date">Anurag University Hyderabad | 10/2021 - 07/2025</p>
+                        <p>GPA: 7.23</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="certifications" class="certifications-section">
+            <div class="container">
+                <h2 class="animate-on-scroll">Certifications</h2>
+                <div class="certificate-scroll-container">
+                    <div class="card-flip animate-on-scroll" onclick="this.classList.toggle('flipped')">
+                        <div class="card-front">
+                            <h3>PCAP: Programming Essentials in Python</h3>
+                            <p>Cisco Networking Academy</p>
+                        </div>
+                        <div class="card-back">
+                            <a href="certificates/PCAP_Certificate.pdf" class="cert-btn" target="_blank">Show Certificate</a>
+                        </div>
+                    </div>
+
+                    <div class="card-flip animate-on-scroll" onclick="this.classList.toggle('flipped')">
+                        <div class="card-front">
+                            <h3>Mastering Generative AI and ChatGPT</h3>
+                            <p>GeeksforGeeks</p>
+                        </div>
+                        <div class="card-back">
+                            <a href="certificates/GenerativeAI_Certificate.pdf" class="cert-btn" target="_blank">Show Certificate</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card-flip animate-on-scroll" onclick="this.classList.toggle('flipped')">
+                        <div class="card-front">
+                            <h3>The Complete Data Structures and Algorithms Course in Python</h3>
+                            <p>Udemy</p>
+                        </div>
+                        <div class="card-back">
+                            <a href="certificates/DS_Algo_Python_Certificate.pdf" class="cert-btn" target="_blank">Show Certificate</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card-flip animate-on-scroll" onclick="this.classList.toggle('flipped')">
+                        <div class="card-front">
+                            <h3>JavaScript Essentials</h3>
+                            <p>Cisco Networking Academy</p>
+                        </div>
+                        <div class="card-back">
+                            <a href="certificates/JS_Essentials_Certificate.pdf" class="cert-btn" target="_blank">Show Certificate</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card-flip animate-on-scroll" onclick="this.classList.toggle('flipped')">
+                        <div class="card-front">
+                            <h3>Digital Skills: Full-Stack Development (DOTNET)</h3>
+                            <p>Wipro TalentNext</p>
+                        </div>
+                        <div class="card-back">
+                            <a href="certificates/FullStack_NET_Certificate.pdf" class="cert-btn" target="_blank">Show Certificate</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <h2 class="animate-on-scroll">Contact Me</h2>
+                <div class="contact-links animate-on-scroll">
+                    <a href="mailto:rohithreddy3103@gmail.com" class="contact-link" target="_blank">
+                        <i class="fas fa-envelope"></i>
+                        <span>Email</span>
+                    </a>
+                    <a href="https://github.com/rohith3103" class="contact-link" target="_blank">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="https://linkedin.com/in/rohith3103" class="contact-link" target="_blank">
+                        <i class="fab fa-linkedin-in"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="download-section">
+            <a href="ROHITH_REDDY_BETHI_SE.pdf" download class="download-btn animate-on-scroll">Download My Resume</a>
+        </section>
+
+        <footer class="footer">
+            <p>&copy; 2025 Rohith Reddy Bethi. All Rights Reserved.</p>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
