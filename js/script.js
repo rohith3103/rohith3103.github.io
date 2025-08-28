@@ -174,6 +174,7 @@ const certScrollContainer = document.querySelector('.certificate-scroll-containe
 
 if (aboutScrollContainer) {
     aboutScrollContainer.addEventListener('scroll', () => highlightCenterCard(aboutScrollContainer));
+    window.addEventListener('load', () => highlightCenterCard(aboutScrollContainer));
 }
 
 if (projectsScrollContainer) {
@@ -184,7 +185,6 @@ if (certScrollContainer) {
 }
 
 window.addEventListener('load', () => {
-    if (aboutScrollContainer) highlightCenterCard(aboutScrollContainer);
     if (projectsScrollContainer) highlightCenterCard(projectsScrollContainer);
     if (certScrollContainer) highlightCenterCard(certScrollContainer);
 });
