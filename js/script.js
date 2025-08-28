@@ -168,8 +168,13 @@ function highlightCenterCard(container) {
     }
 }
 
+const aboutScrollContainer = document.querySelector('.about-content');
 const projectsScrollContainer = document.querySelector('.project-grid');
 const certScrollContainer = document.querySelector('.certificate-scroll-container');
+
+if (aboutScrollContainer) {
+    aboutScrollContainer.addEventListener('scroll', () => highlightCenterCard(aboutScrollContainer));
+}
 
 if (projectsScrollContainer) {
   projectsScrollContainer.addEventListener('scroll', () => highlightCenterCard(projectsScrollContainer));
@@ -179,13 +184,24 @@ if (certScrollContainer) {
 }
 
 window.addEventListener('load', () => {
+    if (aboutScrollContainer) highlightCenterCard(aboutScrollContainer);
     if (projectsScrollContainer) highlightCenterCard(projectsScrollContainer);
     if (certScrollContainer) highlightCenterCard(certScrollContainer);
 });
 
 // 8. Mobile Menu Toggle
 const menuToggle = document.getElementById('menu-toggle');
-const navLinksContainer = document.querySelector('.nav-links-container');
+const navLinksContainer = document.getElementById('nav-links-container');
+const navButtons = document.querySelectorAll('.nav-btn');
+
 menuToggle.addEventListener('click', () => {
     navLinksContainer.classList.toggle('active');
+});
+
+navButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        if (navLinksContainer.classList.contains('active')) {
+            navLinksContainer.classList.remove('active');
+        }
+    });
 });
