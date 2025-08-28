@@ -24,45 +24,6 @@ body {
     transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
 }
 
-body.magic-active {
-    background-color: var(--magic-secondary);
-    color: var(--magic-text);
-}
-
-body.magic-active .navbar, body.magic-active .footer {
-    background-color: rgba(173, 216, 230, 0.8);
-    color: var(--magic-text);
-}
-
-body.magic-active .nav-btn, body.magic-active .social-links a, body.magic-active .timeline-date {
-    color: var(--magic-text);
-}
-
-body.magic-active h1, body.magic-active h2, body.magic-active h3 {
-    color: var(--magic-accent);
-}
-body.magic-active .hero-content h1, body.magic-active .hero-content .tagline {
-    color: var(--magic-text);
-}
-
-body.magic-active .btn, body.magic-active .download-btn {
-    background-color: var(--magic-accent);
-    color: var(--magic-secondary);
-}
-
-body.magic-active .about-card, body.magic-active .card-front, body.magic-active .card-back {
-    background-color: var(--magic-primary);
-    border-color: var(--magic-accent);
-}
-
-body.magic-active .card-back {
-    color: var(--magic-text);
-}
-
-body.magic-active .timeline-item:before {
-    background-color: var(--magic-accent);
-}
-
 h1, h2, h3 {
     font-family: 'Montserrat', sans-serif;
     color: var(--text-color);
@@ -100,13 +61,21 @@ h1, h2, h3 {
     background-color: rgba(255, 165, 0, 0.1);
 }
 body.magic-active .signature-btn {
-    border: 2px solid var(--magic-accent);
-    color: var(--magic-accent);
+    border: 2px solid var(--accent-color);
+    color: var(--accent-color);
 }
 body.magic-active .signature-btn:hover {
     background-color: rgba(138, 43, 226, 0.1);
 }
-
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--text-color);
+    cursor: pointer;
+    z-index: 1001;
+}
 .nav-links-centered {
     display: flex;
     justify-content: center;
@@ -114,6 +83,7 @@ body.magic-active .signature-btn:hover {
     gap: 1rem;
     padding: 0 1rem;
     flex-wrap: wrap;
+    transition: all 0.5s ease-in-out;
 }
 .nav-btn {
     color: var(--text-color);
