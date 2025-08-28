@@ -168,8 +168,13 @@ function highlightCenterCard(container) {
     }
 }
 
+const aboutScrollContainer = document.querySelector('.about-content');
 const projectsScrollContainer = document.querySelector('.project-grid');
 const certScrollContainer = document.querySelector('.certificate-scroll-container');
+
+if (aboutScrollContainer) {
+    aboutScrollContainer.addEventListener('scroll', () => highlightCenterCard(aboutScrollContainer));
+}
 
 if (projectsScrollContainer) {
   projectsScrollContainer.addEventListener('scroll', () => highlightCenterCard(projectsScrollContainer));
@@ -179,6 +184,7 @@ if (certScrollContainer) {
 }
 
 window.addEventListener('load', () => {
+    if (aboutScrollContainer) highlightCenterCard(aboutScrollContainer);
     if (projectsScrollContainer) highlightCenterCard(projectsScrollContainer);
     if (certScrollContainer) highlightCenterCard(certScrollContainer);
 });
