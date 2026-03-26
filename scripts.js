@@ -22,6 +22,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const repoList = document.getElementById("repo-list");
     const canvas = document.getElementById("ai-network");
     const recruiterModeToggle = document.getElementById("recruiter-mode-toggle");
+    const recruiterFocusToggle = document.getElementById("recruiter-focus-toggle");
+    const recruiterFocus = document.getElementById("recruiter-focus");
     const assistantToggle = document.getElementById("assistant-toggle");
     const assistantPanel = document.getElementById("assistant-panel");
     const assistantAnswer = document.getElementById("assistant-answer");
@@ -134,13 +136,32 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
+    const setRecruiterFocusOpen = (open) => {
+        recruiterFocus?.classList.toggle("is-open", open);
+        recruiterFocusToggle?.classList.toggle("is-open", open);
+        recruiterFocusToggle?.setAttribute("aria-expanded", String(open));
+        if (recruiterFocusToggle) {
+            recruiterFocusToggle.textContent = open ? "Close Fast Read" : "Fast Read";
+        }
+    };
+
     recruiterModeToggle?.addEventListener("click", () => {
         const active = body.classList.toggle("recruiter-mode");
         recruiterModeToggle.setAttribute("aria-pressed", String(active));
         recruiterModeToggle.textContent = active ? "Exit Recruiter Mode" : "Recruiter Mode";
+        if (!active) {
+            setRecruiterFocusOpen(false);
+        } else {
+            setRecruiterFocusOpen(false);
+        }
         if (active) {
             document.getElementById("experience")?.scrollIntoView({ behavior: "smooth", block: "start" });
         }
+    });
+
+    recruiterFocusToggle?.addEventListener("click", () => {
+        const shouldOpen = !recruiterFocus?.classList.contains("is-open");
+        setRecruiterFocusOpen(shouldOpen);
     });
 
     assistantToggle?.addEventListener("click", () => {
@@ -265,12 +286,20 @@ document.addEventListener("DOMContentLoaded", () => {
             section.classList.toggle("section-active", visible);
         });
 
-        recruiterFocusLinks.forEach((link) => {
-            const target = document.querySelector(link.getAttribute("href"));
-            if (!target) {
-                return;
+    recruiterFocusLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+            if (window.innerWidth <= 860) {
+                setRecruiterFocusOpen(false);
             }
-            const rect = target.getBoundingClientRect();
+        });
+    });
+
+    recruiterFocusLinks.forEach((link) => {
+        const target = document.querySelector(link.getAttribute("href"));
+        if (!target) {
+            return;
+        }
+        const rect = target.getBoundingClientRect();
             const active = rect.top < window.innerHeight * 0.45 && rect.bottom > window.innerHeight * 0.28;
             link.classList.toggle("is-active", active);
         });
