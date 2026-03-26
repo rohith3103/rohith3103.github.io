@@ -2300,8 +2300,70 @@ body.is-scrolled .mini-avatar-head {
     }
 
     .recruiter-focus {
-        bottom: 130px;
-        padding: 16px;
+        top: auto;
+        right: 10px;
+        left: 10px;
+        width: auto;
+        max-height: min(34vh, 248px);
+        bottom: 84px;
+        padding: 14px;
+        overflow-y: auto;
+        border-radius: 22px;
+    }
+
+    .recruiter-focus-head {
+        gap: 4px;
+        margin-bottom: 12px;
+    }
+
+    .recruiter-focus-head .eyebrow {
+        margin-bottom: 4px;
+    }
+
+    .recruiter-focus-head h3 {
+        font-size: 1.05rem;
+    }
+
+    .recruiter-focus-points {
+        display: flex;
+        gap: 8px;
+        overflow-x: auto;
+        padding-bottom: 4px;
+        scrollbar-width: none;
+    }
+
+    .recruiter-focus-points::-webkit-scrollbar {
+        display: none;
+    }
+
+    .focus-point {
+        min-width: 180px;
+        padding: 12px;
+        border-radius: 16px;
+    }
+
+    .focus-point strong {
+        font-size: 0.92rem;
+    }
+
+    .recruiter-focus-nav {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 8px;
+        margin: 12px 0;
+    }
+
+    .recruiter-focus-nav a {
+        padding: 10px 8px;
+        text-align: center;
+        font-size: 0.84rem;
+    }
+
+    .recruiter-focus .button {
+        min-height: 44px;
+    }
+
+    .recruiter-mode .site-shell::before {
+        background: rgba(4, 10, 20, 0.16);
     }
 
     .resume-dialog,
