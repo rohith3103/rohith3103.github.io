@@ -137,23 +137,33 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     const setRecruiterFocusOpen = (open) => {
-        recruiterFocus?.classList.toggle("is-open", open);
-        recruiterFocusToggle?.classList.toggle("is-open", open);
-        recruiterFocusToggle?.setAttribute("aria-expanded", String(open));
-        if (recruiterFocusToggle) {
-            recruiterFocusToggle.textContent = open ? "Close Fast Read" : "Fast Read";
+        if (!recruiterFocus || !recruiterFocusToggle) {
+            return;
         }
+        recruiterFocus.hidden = !open;
+        recruiterFocus.classList.toggle("is-open", open);
+        recruiterFocusToggle.classList.toggle("is-open", open);
+        recruiterFocusToggle.setAttribute("aria-expanded", String(open));
+        recruiterFocusToggle.textContent = open ? "Close Fast Read" : "Fast Read";
     };
 
-    recruiterModeToggle?.addEventListener("click", () => {
-        const active = body.classList.toggle("recruiter-mode");
-        recruiterModeToggle.setAttribute("aria-pressed", String(active));
-        recruiterModeToggle.textContent = active ? "Exit Recruiter Mode" : "Recruiter Mode";
-        if (!active) {
-            setRecruiterFocusOpen(false);
-        } else {
-            setRecruiterFocusOpen(false);
+    const setRecruiterMode = (active) => {
+        body.classList.toggle("recruiter-mode", active);
+        if (recruiterModeToggle) {
+            recruiterModeToggle.setAttribute("aria-pressed", String(active));
+            recruiterModeToggle.textContent = active ? "Exit Recruiter Mode" : "Recruiter Mode";
         }
+        if (recruiterFocusToggle) {
+            recruiterFocusToggle.hidden = !active;
+        }
+        setRecruiterFocusOpen(false);
+    };
+
+    setRecruiterMode(false);
+
+    recruiterModeToggle?.addEventListener("click", () => {
+        const active = !body.classList.contains("recruiter-mode");
+        setRecruiterMode(active);
         if (active) {
             document.getElementById("experience")?.scrollIntoView({ behavior: "smooth", block: "start" });
         }
@@ -162,6 +172,14 @@ document.addEventListener("DOMContentLoaded", () => {
     recruiterFocusToggle?.addEventListener("click", () => {
         const shouldOpen = !recruiterFocus?.classList.contains("is-open");
         setRecruiterFocusOpen(shouldOpen);
+    });
+
+    recruiterFocusLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+            if (window.innerWidth <= 860) {
+                setRecruiterFocusOpen(false);
+            }
+        });
     });
 
     assistantToggle?.addEventListener("click", () => {
@@ -286,20 +304,12 @@ document.addEventListener("DOMContentLoaded", () => {
             section.classList.toggle("section-active", visible);
         });
 
-    recruiterFocusLinks.forEach((link) => {
-        link.addEventListener("click", () => {
-            if (window.innerWidth <= 860) {
-                setRecruiterFocusOpen(false);
+        recruiterFocusLinks.forEach((link) => {
+            const target = document.querySelector(link.getAttribute("href"));
+            if (!target) {
+                return;
             }
-        });
-    });
-
-    recruiterFocusLinks.forEach((link) => {
-        const target = document.querySelector(link.getAttribute("href"));
-        if (!target) {
-            return;
-        }
-        const rect = target.getBoundingClientRect();
+            const rect = target.getBoundingClientRect();
             const active = rect.top < window.innerHeight * 0.45 && rect.bottom > window.innerHeight * 0.28;
             link.classList.toggle("is-active", active);
         });
